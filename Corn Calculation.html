@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CORN CALCULATION</title>
+</head>
+<body>
+
+
+
+  <h1>CORN PROFIT CALCULATION</h1>
+  <label for="PER KG">PER KG:</label>
+  <input type="number" id="num1">
+  <br>
+
+  <br><br>
+  <button onclick="addNumbers()">PROFIT</button>
+
+
+  <h1 id="result" ></h1>
+  <h1 id="p" ></h1>
+  <h1 id="p2" ></h1>
+
+
+
+  <script>
+    function addNumbers() {
+      const num1 = document.getElementById('num1').value;
+      const tk = 100000;
+      const num2 = 27.50;
+      const kg = tk/27.50;
+      const rev = num1 - num2 ;
+      // Convert input values to numbers and add them
+      const sum = kg*rev;
+      const per = sum/tk;
+      // Display the result
+      document.getElementById('result').textContent = `Profit: ${sum/1000}k`;
+      document.getElementById('p').textContent = `Loss/Profit percentage: ${per*100}  %`;
+      document.getElementById('p2').textContent = `Total Amount: ${(tk+sum)/1000} k `;
+    }
+
+
+
+</script>
+</body>
+</html>
